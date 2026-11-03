@@ -11,6 +11,8 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
+  height: auto;
   border-radius: 1em;
 }
 
@@ -37,7 +39,7 @@ p {
 .twtBanner {
   margin: auto;
   font-family: MS Sans Serif;
-  width: 450px;
+  width: min(450px, 100%);
   padding: 3px;
   background: #c3c3c3;
   color: #000;
@@ -95,8 +97,10 @@ p {
 }
 
 .btn-group {
-  margin-left: 8.5em;
-  width: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto;
 }
 
 .twtBanner p {
@@ -106,3 +110,29 @@ p {
 .yeohBanner img {
     border-radius: 7px;
 }
+
+.blinkies {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  gap: 5px;
+}
+
+.blinkies img {
+  image-rendering: pixelated;
+  border-radius: 0;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .hiCat {
+    width: 70%;
+  }
+}   
